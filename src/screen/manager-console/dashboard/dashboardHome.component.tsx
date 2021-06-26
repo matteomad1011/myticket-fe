@@ -47,12 +47,12 @@ export const DashboardPage = () => {
             <Row gutter={[16, 16]}>
                 <Col flex={"auto"}>
                     <Card bordered>
-                    <Statistic title={"Total"} prefix={"€"} value={dasboardData.totalIncome}/>
+                    <Statistic title={"Total"} prefix={"€"} value={dasboardData.totalIncome || 0}/>
                     </Card>
                 </Col>
                 <Col flex={"auto"}>
                     <Card bordered>
-                        <Statistic title={"Tickets Sold"} value={dasboardData.ticketsSold}/>
+                        <Statistic title={"Tickets Sold"} value={dasboardData.ticketsSold || 0}/>
                     </Card>
                 </Col>
             </Row>
