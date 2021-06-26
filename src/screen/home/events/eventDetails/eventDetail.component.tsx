@@ -10,7 +10,7 @@ import {
   Space,
   List,
   Col,
-  Button, message,
+  Button, message, Spin,
 } from 'antd';
 import Layout, { Content } from "antd/lib/layout/layout";
 import Title from "antd/lib/typography/Title";
@@ -181,6 +181,6 @@ export const EventDetailPage = () => {
       </Layout>
     );
   } else {
-    return <div>Loading</div>;
+    return <div><Spin /></div>;
   }
 };

@@ -51,7 +51,7 @@ export const Navbar = () => {
     switch (role) {
       case "MANAGER":
         return <Space>
-        <Button onClick={() => goto("/manager")}>Manager Page</Button>;
+        <Button onClick={() => goto("/manager")}>Manager Page</Button>
           <Button onClick={() => handleLogout()}>Logout</Button>
         </Space>
       case "USER":
