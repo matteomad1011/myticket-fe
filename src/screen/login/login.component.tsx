@@ -1,15 +1,9 @@
-import { FC, useEffect, useState } from "react";
-import { Form, Input, Button, Row, Alert } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import "./login.css";
-import {
-  authService,
-  LoginRequestDto,
-  LoginResponse,
-  LoginStatus,
-  UserRole,
-} from "../../service/auth.service";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import {FC, useState} from 'react';
+import {Alert, Button, Form, Input} from 'antd';
+import {LockOutlined, UserOutlined} from '@ant-design/icons';
+import './login.css';
+import {authService, LoginRequestDto,} from '../../service/auth.service';
+import {Link, useHistory} from 'react-router-dom';
 
 export const Login: FC = () => {
   const h = useHistory();
