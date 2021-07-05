@@ -3,6 +3,22 @@ import { config } from "../config/config";
 import { BusinessEventDTO, BusinessInfoEventDTO } from "../dto/dto";
 import { BusinessDto, EventDTO } from "./types";
 
+const getPublicEventsByName = async (name: string): Promise<EventDTO[]> => {
+  const response = await axios.get(
+      `${config.serverPrefix}/public/events/name/${name}`
+  );
+
+  if (response.status == 200) {
+    return Promise.resolve(response.data);
+  }
+
+  if (response.status == 404) {
+    return Promise.reject(response.status);
+  }
+
+  return Promise.reject();
+};
+
 const getPublicEventById = async (id: string): Promise<EventDTO> => {
   const response = await axios.get(
     `${config.serverPrefix}/public/events/${id}`
@@ -116,5 +132,6 @@ export const eventService = {
   getUpcomingEvents,
   getPublicEventById,
   getBusinessInfoByEventId,
-  getAllPublicEvents
+  getAllPublicEvents,
+  getPublicEventsByName
 };
